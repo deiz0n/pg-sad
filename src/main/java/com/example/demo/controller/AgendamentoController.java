@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.time.Instant;
 import java.util.List;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/agendamentos")
 public class AgendamentoController {
