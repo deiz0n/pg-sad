@@ -8,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.Instant;
 import java.util.List;
 
 @RestController
@@ -31,7 +32,8 @@ public class AgendamentoController {
 
     @PostMapping
     public ResponseEntity<?> createAgendamento(@RequestBody Agendamento agendamento) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(service.addAgendamento(agendamento));
+        var obj = service.addAgendamento(agendamento);
+        return ResponseEntity.status(HttpStatus.CREATED).body(obj);
     }
 
     @DeleteMapping("/{id}")

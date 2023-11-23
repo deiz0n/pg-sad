@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import com.example.demo.model.embeddables.*;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,7 +13,7 @@ public class Relatorio {
 
 	@EqualsAndHashCode.Include
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	@Embedded
@@ -40,6 +41,7 @@ public class Relatorio {
 	@Column(name = "nutriente_mg")
 	private NutrienteMg nutrienteMg;
 
+	@JsonIgnore
 	@OneToOne
 	private Coleta coleta;
 
