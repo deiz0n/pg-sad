@@ -13,6 +13,7 @@ import com.example.demo.service.RelatorioService;
 
 import jakarta.transaction.Transactional;
 
+@CrossOrigin(maxAge = 3600)
 @RestController
 @RequestMapping("/relatorios")
 public class RelatorioController {
