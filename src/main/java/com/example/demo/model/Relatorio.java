@@ -40,5 +40,7 @@ public class Relatorio {
 	@Column(name = "nutriente_mg")
 	private NutrienteMg nutrienteMg;
 
-	
+	@OneToOne
+	private Coleta coleta;
+
 }
